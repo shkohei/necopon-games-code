@@ -1,0 +1,49 @@
+@use "../setting/relay-setting" as rel;
+
+.dl-link {
+  padding: 70px 0;
+  @include rel.mq(pc) {
+    padding: 100px 0;
+  }
+  &:nth-of-type(2) {
+    position: relative;
+    &::after {
+      content: "";
+      width: 50vw;
+      height: 30px;
+      position: absolute;
+      background-color: rel.$black;
+      bottom: -30px;
+      right: 0;
+      clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+  &__inner {
+    padding: 0 20px;
+    text-align: center;
+  }
+  &__text {
+    font-size: 30px;
+    line-height: 1;
+    color: rel.$white;
+    margin-bottom: 20px;
+    @include rel.mq(pc) {
+      font-size: 64px;
+      margin-bottom: 25px;
+    }
+  }
+  &__btn {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1;
+    color: rel.$black;
+    background-color: rel.$mainColor;
+    padding: 20px 40px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      color: rel.$white;
+      background-color: rel.$black;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../setting/relay-setting" as rel;
+
+.sound {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  color: rel.$gray;
+  cursor: pointer;
+  @include rel.mq(pc) {
+    top: 100px;
+  }
+  &__control {
+    font-size: 13px;
+    line-height: 1.076923076923077;
+    svg {
+      margin-left: 5px;
+    }
+  }
+}

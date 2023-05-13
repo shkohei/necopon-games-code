@@ -1,0 +1,51 @@
+{
+  "name": "webpack-temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack --config ./webpack.dev.js",
+    "prod": "npx webpack --config ./webpack.prod.js",
+    "start": "npx webpack-dev-server --open --config ./webpack.dev.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss-loader": "^7.3.0",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.13.3",
+    "webpack-watched-glob-entries-plugin": "^2.2.6"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 4"
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "destyle.css": "^4.0.0",
+    "gsap": "^3.11.5",
+    "lazyload": "^2.0.0-rc.2",
+    "swiper": "^9.2.4",
+    "terser-webpack-plugin": "^5.3.8"
+  }
+}

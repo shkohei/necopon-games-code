@@ -1,0 +1,130 @@
+@use "../setting/relay-setting" as rel;
+
+.hero {
+  min-height: 100vh;
+  color: rel.$white;
+  position: relative;
+  overflow-x: hidden;
+  &__wrap {
+    position: absolute;
+    top: rel.position-calc(250, 845);
+    left: rel.position-calc(20, 390);
+    @include rel.mq(pc) {
+      top: rel.position-calc(70, 810);
+    }
+  }
+  &__title {
+    font-size: clamp(10px, rel.sp-vw(65), 92px);
+    font-weight: 900;
+    @include rel.mq(pc) {
+      font-size: rel.pc-vw(140);
+      line-height: 1;
+    }
+    > span {
+      display: inline-block;
+    }
+    &--sm {
+      font-size: clamp(10px, rel.sp-vw(30), 42px);
+      @include rel.mq(pc) {
+        font-size: rel.pc-vw(34);
+      }
+      &:nth-of-type(1) {
+        margin-bottom: rel.sp-vw(20);
+        @include rel.mq(pc) {
+          margin-bottom: 0;
+        }
+      }
+      &:nth-of-type(2) {
+        letter-spacing: 0.5em;
+        margin-top: rel.sp-vw(10);
+        @include rel.mq(pc) {
+          letter-spacing: 1em;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, rel.sp-vw(15), 21px);
+    line-height: 1;
+    color: rel.$black;
+    background-color: rel.$mainColor;
+    width: min(rel.sp-vw(170), 240px);
+    height: min(rel.sp-vw(56), 80px);
+    margin-top: rel.sp-vw(30);
+    transform: scaleY(0);
+    // transition: 0.3s;
+    @include rel.mq(pc) {
+      font-size: rel.pc-vw(18);
+      width: rel.pc-vw(230);
+      height: rel.pc-vw(60);
+      margin-top: 0;
+    }
+    &:hover {
+      color: rel.$white;
+      background-color: rel.$black;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: min(rel.sp-vw(200), 285px);
+    height: min(rel.sp-vw(27), 40px);
+    bottom: calc(rel.sp-vw(10) + 30px);
+    right: rel.position-calc(20, 845);
+    font-size: clamp(10px, rel.sp-vw(12), 18px);
+    border: 1px solid rel.$mainColor;
+    background-color: rel.$black;
+    overflow: hidden;
+    @include rel.mq(pc) {
+      font-size: rel.pc-vw(14);
+      width: rel.pc-vw(360);
+      height: max(rel.pc-vw(30), 25px);
+    }
+    &__text {
+      white-space: nowrap;
+      transform: translateX(100%);
+      animation: info-text-scroll 10s infinite linear;
+    }
+  }
+  &__scroll {
+    position: absolute;
+    bottom: 100px;
+    transform: rotate(90deg);
+    border-bottom: 2px solid rel.$mainColor;
+    padding-bottom: 10px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translate(50%, 50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rel.$mainColor;
+      animation: circle-under-scroll 1s infinite;
+    }
+  }
+}
+
+@keyframes circle-under-scroll {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes info-text-scroll {
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,13 @@
+@use "../setting/mixin" as mx;
+
+@include mx.mq(pc) {
+  .u-sp-only {
+    display: none;
+  }
+}
+
+@include mx.mq(sp) {
+  .u-pc-only {
+    display: none;
+  }
+}
